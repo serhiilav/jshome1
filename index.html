@@ -1,24 +1,45 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Homework 1</title>
-	<link media="all" rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
-	<article>
-		<img src="img/image.jpg" alt="описание картинки">
-			<div>
-				<time datetime="2017-02-17" class="color">19.02.2017</time>
-				<h1 class="color">
-					Data Center nimmt modernstes Glasfasernetz in Betrieb
-				</h1>
-				<p>
-					Wir betreiben das aktuell modernste, sicherste und energieeffizienteste Data Center in Winterthur. Ein zweites Data Center in Biel wird im Herbst 2017 eröffnet. ... 
-				<a href="*" class="color">mehr erfahren</a>
-				</p>
-				<a class="button" href="*">offerte anfordern</a>
-			</div>
-	</article>
+<script>
+		var p = document.getElementsByTagName('body')[0].insertAdjacentElement('afterbegin', document.createElement('p'));
+
+		p.innerHTML = 'Element P';
+		p.onclick = changeText;
+
+		function changeText() {
+			element.setAttribute("width", "100");
+		}
+
+		var element = document.getElementsByTagName('p')[0].insertAdjacentElement('afterend', document.createElement('img'));
+
+		element.setAttribute("src", "http://www.abc.net.au/news/image/9154542-1x1-940x940.jpg");
+		element.setAttribute("width", "0");
+		element.setAttribute("alt", "Foto");
+		element.onclick = changePicture;
+		element.onmouseover = zoom;
+		element.onmouseout = out;
+
+		function zoom() {
+			element.setAttribute("width", "200");
+			element.style.transition = 'width 2s' ;
+		}
+
+		function out() {
+			element.setAttribute("width", "100");
+		}
+
+		function changePicture() {
+			element.style.display = 'none';
+		}
+</script>
+
 </body>
 </html>
