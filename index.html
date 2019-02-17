@@ -1,45 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<title>Document</title>
 </head>
 <body>
+
+<h1 class="collection">Hello! I am ostrich.</h1>
+<p class="collection">My name is Robbie.</p>
+<p class="collection"></p>
+<img class="collection" src= 'https://mydiscoveries.ru/wp-content/uploads/2015/05/Depositphotos_53529435_m-e1481985779948.jpg' width="200">
+
 <script>
-		var p = document.getElementsByTagName('body')[0].insertAdjacentElement('afterbegin', document.createElement('p'));
+	var collection = document.getElementsByClassName('collection');
+	Array.prototype.forEach.call(collection, function (item) {
+		item.addEventListener('click', function (event) {
+			event.target.style = `color: red; width: 300px; transition: width 2s;`;
+		})
+	});
 
-		p.innerHTML = 'Element P';
-		p.onclick = changeText;
-
-		function changeText() {
-			element.setAttribute("width", "100");
+	var arrClick = [
+		function ClickHandler() {
+			collection[0].style = 'font-size: 24px;'
+		},
+		function ClickHandler() {
+			collection[2].innerHTML = 'My photo'
+		},
+		function ClickHandler() {
+			collection[2].style = 'margin-left: 100px'
+		},
+		function ClickHandler() {
+			collection[3].src = 'http://www.abc.net.au/news/image/9154542-1x1-940x940.jpg';
 		}
+	]
 
-		var element = document.getElementsByTagName('p')[0].insertAdjacentElement('afterend', document.createElement('img'));
-
-		element.setAttribute("src", "http://www.abc.net.au/news/image/9154542-1x1-940x940.jpg");
-		element.setAttribute("width", "0");
-		element.setAttribute("alt", "Foto");
-		element.onclick = changePicture;
-		element.onmouseover = zoom;
-		element.onmouseout = out;
-
-		function zoom() {
-			element.setAttribute("width", "200");
-			element.style.transition = 'width 2s' ;
-		}
-
-		function out() {
-			element.setAttribute("width", "100");
-		}
-
-		function changePicture() {
-			element.style.display = 'none';
-		}
+	arrClick.forEach(function (item, i) {
+		collection[i].onclick = arrClick[i];
+	})
+	
 </script>
-
 </body>
 </html>
